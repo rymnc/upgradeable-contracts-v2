@@ -1,0 +1,33 @@
+{
+  "name": "upgradeable-test",
+  "license": "MIT",
+  "engines": {
+    "node": "^14"
+  },
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "start": "hardhat node --export-all deployments/artifacts.json",
+    "deploy": "hardhat deploy --network"
+  },
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts-upgradeable": "^4.1.0",
+    "@typechain/ethers-v5": "^7.0.1",
+    "@typechain/hardhat": "^2.1.2",
+    "@types/chai": "^4.2.19",
+    "@types/chai-as-promised": "^7.1.4",
+    "@types/mocha": "^8.2.2",
+    "@types/node": "^16.0.0",
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.1",
+    "hardhat": "^2.4.1",
+    "hardhat-deploy": "^0.8.9",
+    "ts-node": "^10.0.0",
+    "typechain": "^5.1.1",
+    "typescript": "^4.3.5"
+  }
+}

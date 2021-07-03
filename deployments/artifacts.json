@@ -1,0 +1,1086 @@
+{
+  "31337": {
+    "localhost": {
+      "name": "localhost",
+      "chainId": "31337",
+      "contracts": {
+        "DefaultProxyAdmin": {
+          "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "owner",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "constructor"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "previousOwner",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "newOwner",
+                  "type": "address"
+                }
+              ],
+              "name": "OwnershipTransferred",
+              "type": "event"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract TransparentUpgradeableProxy",
+                  "name": "proxy",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "newAdmin",
+                  "type": "address"
+                }
+              ],
+              "name": "changeProxyAdmin",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract TransparentUpgradeableProxy",
+                  "name": "proxy",
+                  "type": "address"
+                }
+              ],
+              "name": "getProxyAdmin",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract TransparentUpgradeableProxy",
+                  "name": "proxy",
+                  "type": "address"
+                }
+              ],
+              "name": "getProxyImplementation",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "owner",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "renounceOwnership",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newOwner",
+                  "type": "address"
+                }
+              ],
+              "name": "transferOwnership",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract TransparentUpgradeableProxy",
+                  "name": "proxy",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "implementation",
+                  "type": "address"
+                }
+              ],
+              "name": "upgrade",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "contract TransparentUpgradeableProxy",
+                  "name": "proxy",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "implementation",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "name": "upgradeAndCall",
+              "outputs": [],
+              "stateMutability": "payable",
+              "type": "function"
+            }
+          ]
+        },
+        "Upgrade_Implementation": {
+          "address": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+          "abi": [
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "bytes32",
+                  "name": "publicKey",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "NewDevice",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "NewMember",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "bytes32",
+                  "name": "ipfsHash",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "NewUpgrade",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "previousOwner",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "newOwner",
+                  "type": "address"
+                }
+              ],
+              "name": "OwnershipTransferred",
+              "type": "event"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "publicKey",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "addDevice",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "addToAllowlist",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_version",
+                  "type": "uint8"
+                }
+              ],
+              "name": "deleteUpgrade",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "firmwareId",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_version",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getHash",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getLatestHash",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getVersion",
+              "outputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "",
+                  "type": "uint8"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_owner",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_minorVersion",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_majorVersion",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_firmwareId",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "initialize",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "isAllowed",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "isDevice",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_ipfsHash",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "newUpgrade",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "owner",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "renounceOwnership",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newOwner",
+                  "type": "address"
+                }
+              ],
+              "name": "transferOwnership",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ]
+        },
+        "Upgrade_Proxy": {
+          "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "initialLogic",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "initialAdmin",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "_data",
+                  "type": "bytes"
+                }
+              ],
+              "stateMutability": "payable",
+              "type": "constructor"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "previousAdmin",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "newAdmin",
+                  "type": "address"
+                }
+              ],
+              "name": "AdminChanged",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "implementation",
+                  "type": "address"
+                }
+              ],
+              "name": "Upgraded",
+              "type": "event"
+            },
+            {
+              "stateMutability": "payable",
+              "type": "fallback"
+            },
+            {
+              "inputs": [],
+              "name": "admin",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newAdmin",
+                  "type": "address"
+                }
+              ],
+              "name": "changeAdmin",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "implementation",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newImplementation",
+                  "type": "address"
+                }
+              ],
+              "name": "upgradeTo",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newImplementation",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "name": "upgradeToAndCall",
+              "outputs": [],
+              "stateMutability": "payable",
+              "type": "function"
+            },
+            {
+              "stateMutability": "payable",
+              "type": "receive"
+            }
+          ]
+        },
+        "Upgrade": {
+          "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+          "abi": [
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "previousAdmin",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "newAdmin",
+                  "type": "address"
+                }
+              ],
+              "name": "AdminChanged",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "implementation",
+                  "type": "address"
+                }
+              ],
+              "name": "Upgraded",
+              "type": "event"
+            },
+            {
+              "stateMutability": "payable",
+              "type": "fallback"
+            },
+            {
+              "inputs": [],
+              "name": "admin",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newAdmin",
+                  "type": "address"
+                }
+              ],
+              "name": "changeAdmin",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "implementation",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newImplementation",
+                  "type": "address"
+                }
+              ],
+              "name": "upgradeTo",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newImplementation",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                }
+              ],
+              "name": "upgradeToAndCall",
+              "outputs": [],
+              "stateMutability": "payable",
+              "type": "function"
+            },
+            {
+              "stateMutability": "payable",
+              "type": "receive"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "bytes32",
+                  "name": "publicKey",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "NewDevice",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "NewMember",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": false,
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "bytes32",
+                  "name": "ipfsHash",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "NewUpgrade",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "previousOwner",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "newOwner",
+                  "type": "address"
+                }
+              ],
+              "name": "OwnershipTransferred",
+              "type": "event"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "publicKey",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "addDevice",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "addToAllowlist",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_version",
+                  "type": "uint8"
+                }
+              ],
+              "name": "deleteUpgrade",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "firmwareId",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_version",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getHash",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getLatestHash",
+              "outputs": [
+                {
+                  "internalType": "bytes32",
+                  "name": "",
+                  "type": "bytes32"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                }
+              ],
+              "name": "getVersion",
+              "outputs": [
+                {
+                  "internalType": "uint8",
+                  "name": "",
+                  "type": "uint8"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_owner",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_minorVersion",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "_majorVersion",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_firmwareId",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "initialize",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "isAllowed",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_address",
+                  "type": "address"
+                }
+              ],
+              "name": "isDevice",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "enum UpgradeV5.upgradeType",
+                  "name": "_upgradeType",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "_ipfsHash",
+                  "type": "bytes32"
+                }
+              ],
+              "name": "newUpgrade",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "owner",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "renounceOwnership",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "newOwner",
+                  "type": "address"
+                }
+              ],
+              "name": "transferOwnership",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "initialLogic",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "initialAdmin",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "_data",
+                  "type": "bytes"
+                }
+              ],
+              "stateMutability": "payable",
+              "type": "constructor"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
